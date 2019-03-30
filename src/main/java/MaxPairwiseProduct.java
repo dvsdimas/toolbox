@@ -3,7 +3,7 @@ import java.io.*;
 
 public class MaxPairwiseProduct {
 
-    private static long getMaxPairwiseProduct(int[] numbers) {
+    static long getMaxPairwiseProduct(int[] numbers) {
 
         final int n = numbers.length;
 
@@ -11,7 +11,7 @@ public class MaxPairwiseProduct {
 
         for (int first = 0; first < n; ++first) {
             for (int second = first + 1; second < n; ++second) {
-                max_product = Math.max(max_product, numbers[first] * numbers[second]);
+                max_product = Math.max(max_product, (long)numbers[first] * (long)numbers[second]);
             }
         }
 
@@ -37,8 +37,7 @@ public class MaxPairwiseProduct {
 
         FastScanner(InputStream stream) {
             try {
-                br = new BufferedReader(new
-                    InputStreamReader(stream));
+                br = new BufferedReader(new InputStreamReader(stream));
             } catch (Exception e) {
                 e.printStackTrace();
             }

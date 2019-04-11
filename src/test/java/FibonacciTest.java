@@ -4,6 +4,11 @@ import org.junit.Test;
 public class FibonacciTest {
 
     @Test
+    public void testF5() {
+        Assert.assertEquals(5, Fibonacci.calc_fib(5));
+    }
+
+    @Test
     public void testF10() {
         Assert.assertEquals(55, Fibonacci.calc_fib(10));
     }

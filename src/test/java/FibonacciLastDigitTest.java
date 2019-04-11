@@ -20,10 +20,13 @@ public class FibonacciLastDigitTest {
     }
 
     @Test
-    public void testF9999() {
-        Assert.assertEquals(1, FibonacciLastDigit.getFibonacciLastDigitNaive(9999));
+    public void testF331() {
+        Assert.assertEquals(9, FibonacciLastDigit.getFibonacciLastDigitNaive(331));
     }
 
-
+    @Test
+    public void testF327305() {
+        Assert.assertEquals(5, FibonacciLastDigit.getFibonacciLastDigitNaive(327305));
+    }
 
 }

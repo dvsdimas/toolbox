@@ -4,18 +4,20 @@ public class FibonacciLastDigit {
 
     static byte getFibonacciLastDigitNaive(int n) {
 
-        if( (n == 0) || (n == 1) ) return (byte) n;
+        if( (n == 0) || (n == 1) ) return (byte)n;
 
-        final byte[] array = new byte[n];
+        final byte[] array = new byte[n + 1];
 
         array[0] = 0;
         array[1] = 1;
 
-        return 0;
+        for(int i = 2; i <= n; i++) {
+            array[i] = (byte)((array[i - 1] + array[i - 2]) % 10);
+        }
+
+        return array[n];
 
     }
-// 1, 2, 3, 4, 5, 6, 7,  8,  9, 10
-// 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
 
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);

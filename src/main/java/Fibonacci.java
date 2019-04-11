@@ -1,16 +1,21 @@
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Fibonacci {
 
-  private final static Map<Integer, Long> map = new HashMap<>();
-
   static long calc_fib(int n) {
 
-    if (n <= 1) return n;
+      if( (n == 0) || (n == 1) ) return n;
 
-    return map.computeIfAbsent(n, (i) -> calc_fib(i - 1) + calc_fib(i - 2));
+      final long[] array = new long[n + 1];
+
+      array[0] = 0;
+      array[1] = 1;
+
+      for(int i = 2; i <= n; i++) {
+          array[i] = array[i - 1] + array[i - 2];
+      }
+
+      return array[n];
   }
 
   public static void main(String[] args) {
